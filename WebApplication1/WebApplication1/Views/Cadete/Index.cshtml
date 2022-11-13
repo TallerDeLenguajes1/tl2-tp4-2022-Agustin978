@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Cadete Page";
+}
+@model List<Cadeteria_2.Models.CadeteModel>;
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Cadetes</h1>
+    <a class="btn-info btn-success btn-lg" asp-action="createCadete">Agregar cadete</a>
+    
+    @*foreach(var item in Model)
+    {
+        <h4> ID = @item.getID()</h4>
+        <h4> Nombre = @item.getNombre()</h4>
+        <h4> Telefono = @item.getTelefono()</h4>
+        <h4> Diteccion = @item.getDireccion()</h4>
+        <h4> Pedidos = @item.getPedidos().Count()</h4>
+        <br/>
+    }*@
+    
+    </br>
+    <p>Seleccione entre los @Model.Count() cadetes:</p>
+
+     <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Cantidad Pedidos</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          @foreach(var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.getID()</th>
+                    <td>@item.getNombre()</td>
+                    <td>@item.getTelefono()</td>
+                    <td>@item.getDireccion()</td>
+                    <td>@item.getPedidos().Count()</td>
+                </tr>
+            }
+      </tbody>
+    </table>
+
+</div>

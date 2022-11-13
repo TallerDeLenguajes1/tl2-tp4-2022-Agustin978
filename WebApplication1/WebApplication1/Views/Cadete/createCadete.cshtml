@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Cadete Page";
+}
+
+<h1 class="text-center">Crear cadete</h1>
+<form asp-controller="Cadete" asp-action="creaCadete" method = "POST">
+    <fieldset>
+        <legend class="">Registrar un Cadete</legend>
+        <div class="input-group-sm">Nombre:<input type="text" name="nombre" required></div>
+        <div class="input-group-sm">Direccion:<input type="text" name="direccion" required></div>
+        <div class="input-group-sm">Telefono:<input type="text" name="telefono" required></div>
+        <div class="input-group-sm"><input type="submit" name="btnSubmit" value="Enviar"><br/><input type="reset" name="btnRestart" value="Borrar"></div>
+    </fieldset>
+        
+</form>
